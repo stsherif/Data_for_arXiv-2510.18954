@@ -1,5 +1,4 @@
 #from bonds_n_coords import lat_bonds
-from bonds_n_coords import coordinates
 from mpl_toolkits.mplot3d import Axes3D
 from mpl_toolkits.axes_grid1.axes_divider import make_axes_locatable
 #import matplotlib.pyplot as plt
@@ -7,6 +6,8 @@ import matplotlib
 matplotlib.use("TkAgg")   # or "Agg" for non-interactive, "Qt5Agg" if Qt works
 import matplotlib.pyplot as plt
 import sys
+sys.path.append("..")  
+from bonds_n_coords import coordinates
 import os
 import numpy as np
 import re
@@ -239,8 +240,8 @@ for i in range(num):
      ax1_divider = make_axes_locatable(ax[i])
      im10 = ax[0].contourf(kx[0],ky[0],SSF[0],300,cmap=plt.cm.gist_heat ,norm = norm)# vmax=vx, vmin=0.0)
      ax10_divider = make_axes_locatable(ax[0])
-     for im in im1.collections:
-            im.set_edgecolor("face")
+     #for im in im1.collections:
+     #       im.set_edgecolor("face")
      ax[i].axis('equal')
      ax[i].set_ylim([-1,1])
      ax[i].set_xlim(-1,1)
